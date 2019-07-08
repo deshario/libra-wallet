@@ -7,7 +7,11 @@ const Create = () => {
     const [aliasName, setAliasName] = useState('')
 
     const getNewWallet = () => {
+        var tempWallets = [];
         console.log('Creating Wallet');
+        tempWallets = JSON.parse(localStorage.getItem('wallets'));
+        console.log('tempWAllets ==> ',tempWallets);
+
         axios.post(`https://libraservice2.kulap.io/createWallet`)
         .then(res => {
             let tempAddress = res.data.address;
@@ -15,7 +19,10 @@ const Create = () => {
                 address : tempAddress,
                 alias : aliasName
             }
-            localStorage.setItem('wallets', JSON.stringify(data));
+            tempWallets.push(data);
+            console.log('new Wallet => ',tempWallets);
+
+            // localStorage.setItem('wallets', JSON.stringify(tempWallets));
         })
     }
 
