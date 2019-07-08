@@ -1,15 +1,39 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Card, Button, Form } from 'react-bootstrap';
 
 const Mint = () => {
+
+    const [items, setItems] = useState([])
+    const [alias, setAlias] = useState('') // Alias Or Address
+
+    useEffect(() => {
+        let tempWallets = JSON.parse(localStorage.getItem('wallets')) || [];
+        setItems(tempWallets)
+    },[])
+
+    const searchAddress = aliasName => {
+        let obj = items.find(searching => searching.alias === aliasName);
+        return obj && obj.address || null;
+    }
+
+    const MintCoin = e => {
+        e.preventDefault();
+        if(alias.length > 30){ // Address
+            console.log(' Address Detected => ',alias);
+        }else{ // Alias
+            console.log('Alias Detected');
+            console.log(alias,'  => ',searchAddress(alias));
+        }
+    }
+
     return(
         <Card>
             <Card.Header>Mint Coin</Card.Header>
             <Card.Body>
-                <Form>
+                <Form onSubmit={MintCoin}>
                     <Form.Group>
                         <Form.Label>Wallet Address</Form.Label>
-                        <Form.Control type="text"/>
+                        <Form.Control type="text" onChange={(e) => setAlias(e.target.value)} required minLength={4}/>
                         <Form.Text className="text-muted">Example : a77b7f8997b42212d213b93f7281419dcdfe993a0bf27180ffdb2c3ac8e72534</Form.Text>
                     </Form.Group>
                     <Form.Group>

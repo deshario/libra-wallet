@@ -8,7 +8,7 @@ const Wallets = () => {
     useEffect(() => {
         let tempWallets = JSON.parse(localStorage.getItem('wallets')) || [];
         setItems(tempWallets)
-    })
+    },[])
 
     return( 
         <Table striped bordered hover>
