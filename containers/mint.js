@@ -4,7 +4,7 @@ import { Card, Button, Form } from 'react-bootstrap';
 const Mint = () => {
     return(
         <Card>
-            <Card.Header>Mint Coins</Card.Header>
+            <Card.Header>Mint Coin</Card.Header>
             <Card.Body>
                 <Form>
                     <Form.Group>
