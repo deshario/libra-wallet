@@ -11,7 +11,7 @@ class MyApp extends App {
     return (
       <Container>
         <Head>
-          <title>Deshario Wallet</title>
+          <title>My Wallet</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
         </Head>

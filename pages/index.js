@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Row, Col as ColBootstrap, Card, ListGroup, Button, Form } from 'react-bootstrap';
+import { Row, Col as ColBootstrap, Card, ListGroup } from 'react-bootstrap';
 import Create from '../containers/create.js'
 import CheckBalance from '../containers/checkBalance'
 import Mint from '../containers/mint'
@@ -9,7 +9,7 @@ import styled from 'styled-components'
 
 const Index = () => {
 
-    const [activeMenu, setActiveMenu] = useState(0)
+    const [activeMenu, setActiveMenu] = useState(4)
 
     const ManageClick = position => {
         setActiveMenu(position);

@@ -36,9 +36,9 @@ const Create = () => {
     return(
         <>
         { loading ? <LoadingData/> : '' }
-        { isSuccess ?  <Alert variant="success" onClose={() => setSuccess(false)} dismissible>Create Account Success</Alert> : '' }
+        { isSuccess ?  <Alert variant="success" onClose={() => setSuccess(false)} dismissible>Create Wallet Success</Alert> : '' }
         <Card>
-            <Card.Header>Create Wallet</Card.Header>
+            <Card.Header bg="primary">Create Wallet</Card.Header>
             <Card.Body>
                 <Form onSubmit={createNewWallet}>
                     <Form.Group>

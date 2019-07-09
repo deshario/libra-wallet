@@ -13,7 +13,7 @@ const LoadingData = () => {
 export default LoadingData
 
 const Loading = styled.div`
-    position: absolute;
+    position: absolute !important;
     left: 0;
     top: 0;
     right: 0;
