@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Row, Col, Card, ListGroup, Button, Form } from 'react-bootstrap';
+import { Row, Col as ColBootstrap, Card, ListGroup, Button, Form } from 'react-bootstrap';
 import Create from '../containers/create.js'
 import CheckBalance from '../containers/checkBalance'
 import Mint from '../containers/mint'
 import Wallets from '../containers/wallets'
 import Transfer from '../containers/transfer'
+import styled from 'styled-components'
 
 const Index = () => {
 
@@ -38,9 +39,9 @@ const Index = () => {
             <Col md={3}>
                 <Card>
                     <ListGroup variant="flush">
-                        <ListGroup.Item action active={isActive(0)} onClick={() => ManageClick(0)}>Wallets</ListGroup.Item>
+                        <ListGroup.Item action active={isActive(0)} onClick={() => ManageClick(0)}>All Wallets</ListGroup.Item>
                         <ListGroup.Item action active={isActive(1)} onClick={() => ManageClick(1)}>Create Wallet</ListGroup.Item>
-                        <ListGroup.Item action active={isActive(2)} onClick={() => ManageClick(2)}>Mint Coint</ListGroup.Item>
+                        <ListGroup.Item action active={isActive(2)} onClick={() => ManageClick(2)}>Mint Coin</ListGroup.Item>
                         <ListGroup.Item action active={isActive(3)} onClick={() => ManageClick(3)}>Check Balance</ListGroup.Item>
                         <ListGroup.Item action active={isActive(4)} onClick={() => ManageClick(4)}>Transfer Coins</ListGroup.Item>
                     </ListGroup>
@@ -54,3 +55,7 @@ const Index = () => {
 }
 
 export default Index
+
+const Col = styled(ColBootstrap)`
+    position: unset!important;
+`
