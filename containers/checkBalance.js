@@ -33,6 +33,7 @@ const CheckBalance = () => {
     
     const CheckBalance = e => {
         e.preventDefault();
+        setQueryAddress('')
         if(alias.length > 30){ // Address
             setQueryAddress(alias)
             setAlias(searchAlias(alias))

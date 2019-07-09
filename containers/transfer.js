@@ -61,9 +61,13 @@ const Transfer = () => {
         axios
         .post("https://libraservice2.kulap.io/transfer",{
             "fromAddress": source,
-            "mnemonic": "lorem ipsum",
+            "mnemonic": "Pay Bills",
             "toAddress": destination,
             "amount": amount
+            // "fromAddress": "0da045bec135aaaf280c16afd9671162f6c6809a9593b7b6e7be1175f7bbba06",
+            // "mnemonic": "Pay Bills",
+            // "toAddress": "7d7041e1c6635cb8bf55b1f064487553046af9dc2079813d2a5c741a9ad5a875",
+            // "amount": "2000000000000"
         })
         .then(response => {
             if(response.status == 200){
