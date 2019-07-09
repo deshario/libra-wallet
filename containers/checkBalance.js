@@ -4,7 +4,6 @@ import axios from 'axios';
 
 const CheckBalance = () => {
 
-    const [aliasName, setAliasName] = useState('')
     
     const QueryBalance = async () => {
         // let res = await fetch('https://api.spacexdata.com/v3/missions/F3364BF');
